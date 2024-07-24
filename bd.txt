@@ -1,0 +1,20 @@
+-- Borrar la Base de Datos si Existe
+DROP DATABASE IF EXISTS skatepark;
+
+-- Crear la Base de Datos
+CREATE DATABASE skatepark;
+
+-- Conectarse a la Base de Datos
+\c skatepark;
+
+CREATE TABLE skaters (id SERIAL, email VARCHAR(50) NOT NULL, nombre
+VARCHAR(25) NOT NULL, password VARCHAR(25) NOT NULL, anos_experiencia
+INT NOT NULL, especialidad VARCHAR(50) NOT NULL, foto VARCHAR(255) NOT
+NULL, estado BOOLEAN NOT NULL);
+
+INSERT INTO skaters (email, nombre, password, anos_experiencia, especialidad, foto, estado) VALUES
+('danny@example.com', 'Danny', '111', 5, 'Skateboarding', '/uploads/Danny.jpg', true),
+('evelien@example.com', 'Evelien', '222', 3, 'Freestyle', '/uploads/Evelien.jpg', false),
+('pedro@example.com', 'Pedro', '333', 7, 'Downhill', '/uploads/Pedro.jpg', true),
+('tony@example.com', 'Tony', '444', 10, 'Vert', '/uploads/Tony.jpg', false),
+('admin@example.com', 'Admin', '555', 0, 'administrador', '/uploads/Admin.jpg', true);
