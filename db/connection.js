@@ -84,14 +84,26 @@ const putSkatersAdmin = async (data) => {
   }
 };
 
+const getDataUser = async (email) => {
+  try {
+    const result = await pool.query("SELECT * FROM skaters WHERE email = $1", [
+      email,
+    ]);
+    return result.rows[0];
+  } catch (error) {
+    console.error("Error:", error);
+    throw error;
+  }
+};
 const verifyCredentials = async (email, password) => {
   try {
-    const result = await pool.query("SELECT * FROM skaters WHERE email = $ 1", [
+    const result = await pool.query("SELECT * FROM skaters WHERE email = $1", [
       email,
     ]);
     if (result.rows.length > 0) {
       const user = result.rows[0];
       if (user.password === password) {
+        //console.log(user);
         return user;
       } else {
         throw new Error("Invalid password");
@@ -104,11 +116,23 @@ const verifyCredentials = async (email, password) => {
     throw error;
   }
 };
-
+const deleteSkater = async (id) => {
+  try{
+    const result = await pool.query("DELETE FROM skaters WHERE id = $1", 
+      [id]
+    );
+    return result;
+  }catch (error){
+    console.error("Error:", error);
+    throw error;
+  }
+}
 module.exports = {
   getSkaters,
+  getDataUser,
   postSkaters,
   verifyCredentials,
   putSkaters,
   putSkatersAdmin,
+  deleteSkater
 };

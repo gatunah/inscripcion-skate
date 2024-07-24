@@ -14,13 +14,15 @@
               <label for="password">Password</label>
               <input type="password" class="form-control highlight-input" id="password" placeholder="Ingresa tu contraseña" required/>
             </div>
-            <button type="submit" class="btn btn-success btn-block mt-4 btn-custom">Ingresar</button>
+            <button type="submit" class="btn btn-success btn-block mt-4 btn-custom" id="btnSubmitLogin">Ingresar</button>
           </form>
           <div class="text-center mt-3">
-            <p>¿Aún no tienes cuenta? <a href="#">Regístrate</a></p>
+            <p>¿Aún no tienes cuenta? <a href="/register">Regístrate</a></p>
           </div>
         </div>
       </div>
     </div>
   </div>
+    {{> toast}}
 </div>
+

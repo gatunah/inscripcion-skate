@@ -1,3 +1,4 @@
+
 <div class="container text-center my-5">
   <h1 class="display-6 font-weight-bold text-uppercase title-shadow">Administración</h1>
   <div class="py-4">
@@ -20,10 +21,10 @@
           <tr>
             
             <th scope="row">{{@index}}</th>
-            <td><div></div></td>
-            <td>{{nombre}}</td>
+            <td><img id="fotoSkater" src="{{foto}}" alt="Foto de perfil"></td>
+            <td>{{capitalize nombre}}</td>
             <td>{{anos_experiencia}}</td>
-            <td>{{especialidad}}</td>
+            <td>{{capitalize especialidad}}</td>
             <td>
               <input type="checkbox" class="estado-checkbox" id="{{id}}" value="{{id}}" {{#if estado}}checked{{/if}}>
             </td>

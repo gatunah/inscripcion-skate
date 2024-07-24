@@ -51,3 +51,9 @@ body {
     background-color: whitesmoke;
     border: thin black;
   }
+  #fotoSkater{
+    width: 100px; 
+    height: auto; 
+    border-radius: 50%; 
+    object-fit: cover; 
+  }
